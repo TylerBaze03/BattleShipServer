@@ -4,14 +4,34 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"battleshipServer/src"
 )
 
 const (
 	serverAddress = "localhost:8080"
+
+	DEBUG = true
 )
+
+
+func makePlayer() *battleShip.Player{
+	newPlay := battleShip.NewPlayer("Tyler")
+
+	return newPlay
+}
+
+
 
 func handleConnection(con net.Conn) {
 	defer con.Close()
+	/*
+	if (DEBUG){
+		newPlay := makePlayer()
+		gameInfo := battleShip.NewGame(newPlay)
+		// Need to create a lobby system so players could join and wait for player to join their game
+	}
+	*/
+	
 }
 
 func main() {
